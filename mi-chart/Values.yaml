@@ -1,4 +1,0 @@
-container:
-  image: jesusnicolassierra/hola-mundo-clase123 
-  tag: 34
-  port: 3000
