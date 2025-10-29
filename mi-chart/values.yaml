@@ -1,0 +1,5 @@
+container:
+  # Full image name without tag (e.g. 'adonispaz9506/hola-mundo-clase567')
+  image: "jesusnicolassierra/hola-mundo-clase123"
+  tag: "34"
+  port: 3000
