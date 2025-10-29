@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mi-deployment-3
+  namespace: adonis-paz-dev
+  labels:
+    app: mi-app-3
+    areanegocio: tecnologia
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mi-app-3
+  template:
+    metadata:
+      labels:
+        app: mi-app-3
+    spec:
+      containers:
+        - name: contenedor-principal
+          image: adonispaz9506/hola-mundo-clase567:build-{{ .Values.container.tag }} # <-- Reemplaza con la imagen que quieras usar
+          imagePullPolicy: Always
+          ports:
+            - containerPort: { { .Values.container.port } }
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "800Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1500Mi"
+          startupProbe:
+            httpGet:
+              path: /startup
+              port: 3000
+            failureThreshold: 5
+            periodSeconds: 10
