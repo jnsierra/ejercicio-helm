@@ -21,7 +21,7 @@ spec:
           image: adonispaz9506/hola-mundo-clase567:build-{{ .Values.container.tag }} # <-- Reemplaza con la imagen que quieras usar
           imagePullPolicy: Always
           ports:
-            - containerPort: { { .Values.container.port } }
+            - containerPort: {{ .Values.container.port }}
           resources:
             requests:
               cpu: "500m"
