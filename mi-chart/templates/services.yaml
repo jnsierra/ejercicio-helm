@@ -9,5 +9,5 @@ spec:
   ports:
     - protocol: TCP
       port: 4000 # Puerto del Service
-      targetPort: { { .Values.container.port } } # Puerto del contenedor
+      targetPort: {{ .Values.container.port }} # Puerto del contenedor
   type: ClusterIP
