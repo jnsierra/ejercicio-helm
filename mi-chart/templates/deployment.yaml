@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mi-deployment-3
-  namespace: adonis-paz-dev
+  namespace: nicolas-sierra-dev
   labels:
     app: mi-app-3
     areanegocio: tecnologia
